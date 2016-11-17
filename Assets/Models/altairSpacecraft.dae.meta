@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 735f1495d47e8e14892910d5d372e54a
-timeCreated: 1478031181
+guid: e25f7c808da93274aa82e72eaff07b3b
+timeCreated: 1479377104
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,35 +9,34 @@ ModelImporter:
     100002: Body
     100004: Camera
     100006: Lamp
-    100008: LegBack
-    100010: LegFront
-    100012: LegLeft
-    100014: LegRight
-    100016: SideEngine
+    100008: Leg
+    100010: Leg_001
+    100012: SideEngine
+    100014: Sphere
     400000: //RootNode
     400002: Body
     400004: Camera
     400006: Lamp
-    400008: LegBack
-    400010: LegFront
-    400012: LegLeft
-    400014: LegRight
-    400016: SideEngine
+    400008: Leg
+    400010: Leg_001
+    400012: SideEngine
+    400014: Sphere
     2300000: Body
-    2300002: LegBack
-    2300004: LegFront
-    2300006: LegLeft
-    2300008: LegRight
-    2300010: SideEngine
+    2300002: Leg
+    2300004: Leg_001
+    2300006: SideEngine
+    2300008: Sphere
     3300000: Body
-    3300002: LegBack
-    3300004: LegFront
-    3300006: LegLeft
-    3300008: LegRight
-    3300010: SideEngine
-    4300000: LegLeft
+    3300002: Leg
+    3300004: Leg_001
+    3300006: SideEngine
+    3300008: Sphere
+    4300000: SideEngine
     4300002: Body
-    4300004: SideEngine
+    4300004: Leg_001
+    4300006: Leg
+    4300008: Sphere
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -96,7 +95,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
