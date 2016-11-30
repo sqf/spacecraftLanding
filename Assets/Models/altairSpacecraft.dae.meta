@@ -1,41 +1,56 @@
 fileFormatVersion: 2
-guid: e25f7c808da93274aa82e72eaff07b3b
-timeCreated: 1479377104
+guid: 437c084fd9272ef46a063a4fdcf51845
+timeCreated: 1480373370
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Body
-    100004: Camera
-    100006: Lamp
-    100008: Leg
-    100010: Leg_001
-    100012: SideEngine
-    100014: Sphere
+    100002: bigBaniak
+    100004: Body
+    100006: Camera
+    100008: helperCenterSphere
+    100010: Lamp
+    100012: Leg
+    100014: Leg2
+    100016: NurbsPath
+    100018: SideEngine
+    100020: smallBaniaks
     400000: //RootNode
-    400002: Body
-    400004: Camera
-    400006: Lamp
-    400008: Leg
-    400010: Leg_001
-    400012: SideEngine
-    400014: Sphere
-    2300000: Body
-    2300002: Leg
-    2300004: Leg_001
-    2300006: SideEngine
-    2300008: Sphere
-    3300000: Body
-    3300002: Leg
-    3300004: Leg_001
-    3300006: SideEngine
-    3300008: Sphere
+    400002: bigBaniak
+    400004: Body
+    400006: Camera
+    400008: helperCenterSphere
+    400010: Lamp
+    400012: Leg
+    400014: Leg2
+    400016: NurbsPath
+    400018: SideEngine
+    400020: smallBaniaks
+    2300000: bigBaniak
+    2300002: Body
+    2300004: helperCenterSphere
+    2300006: Leg
+    2300008: Leg2
+    2300010: NurbsPath
+    2300012: SideEngine
+    2300014: smallBaniaks
+    3300000: bigBaniak
+    3300002: Body
+    3300004: helperCenterSphere
+    3300006: Leg
+    3300008: Leg2
+    3300010: NurbsPath
+    3300012: SideEngine
+    3300014: smallBaniaks
     4300000: SideEngine
     4300002: Body
-    4300004: Leg_001
+    4300004: Leg2
     4300006: Leg
-    4300008: Sphere
+    4300008: helperCenterSphere
+    4300010: smallBaniaks
+    4300012: bigBaniak
+    4300014: NurbsPath
     9500000: //RootNode
   materials:
     importMaterials: 1

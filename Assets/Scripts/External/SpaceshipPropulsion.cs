@@ -5,7 +5,9 @@ public class SpaceshipPropulsion : MonoBehaviour
 {
     public Rigidbody spaceshipRigidbody;
 
-    public float mainEngineThrust = 100f;
+    public Rigidbody mainThruster;
+
+    public float mainEngineMaxThrust = 100f;
     public float angularEngineThrustZ = 2f;
     public float angularEngineThrustX = 2f;
     public float angularEngineThrustY = 1f;
@@ -13,8 +15,8 @@ public class SpaceshipPropulsion : MonoBehaviour
     public float additionalEngineThrustX = 20f;
     public float additionalEngineThrustY = 20f;
 
-    private bool _mainEngineEnabled = false;
-    public bool mainEngineEnabled
+    private float _mainEngineEnabled = 0;
+    public float mainEngineEnabled
     {
         get
         {
@@ -22,7 +24,7 @@ public class SpaceshipPropulsion : MonoBehaviour
         }
         set
         {
-            _mainEngineEnabled = value;
+            _mainEngineEnabled = Mathf.Clamp01(value);
         }
     }
 
@@ -30,10 +32,8 @@ public class SpaceshipPropulsion : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_mainEngineEnabled)
-        {
-            MainEngine(1);
-        }
+        MainEngine(_mainEngineEnabled);
+        
         RotateX(_rotateX);
         _rotateX = 0;
         RotateY(_rotateY);
@@ -48,16 +48,7 @@ public class SpaceshipPropulsion : MonoBehaviour
             thrust = 1;
         if (thrust < 0)
             thrust = 0;
-        spaceshipRigidbody.AddForce(transform.up * thrust * mainEngineThrust, ForceMode.Acceleration);
-    }
-
-    public void MainEngineEnable()
-    {
-        _mainEngineEnabled = true;
-    }
-    public void MainEngineDisable()
-    {
-        _mainEngineEnabled = false;
+        mainThruster.AddForce(transform.up * thrust * mainEngineMaxThrust, ForceMode.Acceleration);
     }
 
     public void setAngularThrustX(float turnIntensity)
