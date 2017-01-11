@@ -18,7 +18,7 @@ public class InputController : MonoBehaviour
 
     private Quaternion cameraWrapperDefaultRotation;
 
-    private bool cameraLocked;
+    private bool cameraLocked = true;
 
     void Start()
     {
