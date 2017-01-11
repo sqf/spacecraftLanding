@@ -12,22 +12,22 @@ public class SpaceshipPropulsionAssist : MonoBehaviour
 
     private SpaceshipPropulsion spaceshipPropulsion;
 
-    public bool _stabiliseTorqueEnabled { get; set; }
-    public bool _turnAssistEnabled { get; set; }
-    public bool _directionAssistEnabled { get; set; }
+    public bool StabiliseTorqueEnabled { get; set; }
+    public bool TurnAssistEnabled { get; set; }
+    public bool DirectionAssistEnabled { get; set; }
 
     void Start()
     {
         spaceshipNavigation = GetComponent<SpaceshipNavigation>();
         spaceshipPropulsion = GetComponent<SpaceshipPropulsion>();
-        _stabiliseTorqueEnabled = true;
-        _turnAssistEnabled = true;
-        _directionAssistEnabled = true;
+        StabiliseTorqueEnabled = true;
+        TurnAssistEnabled = true;
+        DirectionAssistEnabled = true;
     }
 
     void FixedUpdate()
     {
-        if (_stabiliseTorqueEnabled)
+        if (StabiliseTorqueEnabled)
         {
             if (!_stabiliseTorqueTurnDisabled)
             {
@@ -43,12 +43,12 @@ public class SpaceshipPropulsionAssist : MonoBehaviour
     public void setStabiliseTorque(bool enabled)
     {
 
-        _stabiliseTorqueEnabled = enabled;
+        StabiliseTorqueEnabled = enabled;
     }
 
     public void switchStabiliseTorque()
     {
-        _stabiliseTorqueEnabled = !_stabiliseTorqueEnabled;
+        StabiliseTorqueEnabled = !StabiliseTorqueEnabled;
     }
 
     public void StabiliseTorque()

@@ -14,6 +14,8 @@ public class InputController : MonoBehaviour
 
     private SpaceshipPropulsion spaceshipPropulsion;
 
+    private SpaceshipPropulsionAssist spaceshipPropulsionAssist;
+
     private Quaternion cameraWrapperDefaultRotation;
 
     private bool cameraLocked;
@@ -21,6 +23,7 @@ public class InputController : MonoBehaviour
     void Start()
     {
         spaceshipPropulsion = spaceship.GetComponent<SpaceshipPropulsion>();
+        spaceshipPropulsionAssist = spaceship.GetComponent<SpaceshipPropulsionAssist>();
         cameraWrapperDefaultRotation = cameraWrapper.transform.rotation;
     }
 
@@ -28,6 +31,19 @@ public class InputController : MonoBehaviour
     {
         HandleCameraInput();
         HandleInput();
+        HandleStabilisationInput();
+    }
+
+    private void HandleStabilisationInput()
+    {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {   
+            spaceshipPropulsionAssist.StabiliseTorqueEnabled = !spaceshipPropulsionAssist.StabiliseTorqueEnabled;
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            spaceshipPropulsionAssist.DirectionAssistEnabled = !spaceshipPropulsionAssist.DirectionAssistEnabled;
+        }
     }
 
     private void HandleCameraInput()
@@ -43,7 +59,10 @@ public class InputController : MonoBehaviour
             cameraWrapper.transform.Rotate(new Vector3(0, Input.GetAxis("CameraHorizontal"), 0) / 10);
         }
 
-        camera.transform.LookAt(spaceship.transform);
+        if (camera != null)
+        {
+            camera.transform.LookAt(spaceship.transform);
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
